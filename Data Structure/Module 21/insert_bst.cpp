@@ -59,8 +59,35 @@ void level_order(Node * root){
     }
 }
 
+void insert(Node * &root, int x){
+    if(root == NULL){
+        root = new Node(x);
+        return;
+    }
+    if(x < root->val){
+        if(root->left == NULL){
+            root->left = new Node(x);
+        }
+        else{
+            insert(root->left, x);
+        }
+    }
+    else{
+         if(root->right == NULL){
+            root->right = new Node(x);
+        }
+        else{
+            insert(root->right, x);
+        }
+    }
+}
+
 int main(){
     Node * root = input_tree();
+    insert(root, 12);
+    insert(root, 22);
+    insert(root, 27);
     level_order(root);
+
     return 0;
 }
