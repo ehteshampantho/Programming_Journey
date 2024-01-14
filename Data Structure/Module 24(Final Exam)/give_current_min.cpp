@@ -32,11 +32,18 @@ int main(){
             cout<< pq.top() << endl;
         }
         else if(c == 2){
-            if(pq.empty()){
+            if(!pq.empty()){
+                pq.pop();
+                if(pq.empty()){
+                    cout<< "Empty" << endl;
+                }
+                else{
+                    cout<< pq.top() << endl;
+                }
+            }
+            else{
                 cout<< "Empty" << endl;
             }
-            pq.pop();
-            cout<< pq.top() << endl;
         }
     }
     
