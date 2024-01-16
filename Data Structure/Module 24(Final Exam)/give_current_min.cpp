@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int n;
+    long long int n;
     cin>>n;
     
-    priority_queue<int, vector<int>, greater<int>> pq;
+    priority_queue<long long int, vector<long long int>, greater<long long int>> pq;
     
     while(n--){
-    int x;
+    long long int x;
     cin>>x;
     pq.push(x);
     }
@@ -23,13 +23,18 @@ int main(){
         int c;
         cin>>c;
         if(c == 0){
-            int x;
+            long long int x;
             cin>>x;
             pq.push(x);
             cout<< pq.top() << endl;
         }
         else if(c == 1){
-            cout<< pq.top() << endl;
+            if(pq.empty()){
+                cout << "Empty" << endl;
+            }
+            else{
+                cout<< pq.top() << endl;
+            }
         }
         else if(c == 2){
             if(!pq.empty()){
@@ -41,7 +46,7 @@ int main(){
                     cout<< pq.top() << endl;
                 }
             }
-            else{
+            else if(pq.empty()){
                 cout<< "Empty" << endl;
             }
         }
