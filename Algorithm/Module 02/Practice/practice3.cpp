@@ -2,19 +2,20 @@
 
 using namespace std;
 
-vector<int> v[1000];
-bool vis[1000];
-int level[1000];
-void bfs(int src, int des){
+vector<int> v[100];
+bool vis[100];
+int level[100];
+
+void bfs(int node){
+    // int src = 0;
     queue<int> q;
-    q.push(src);
-    vis[src] = true;
-    level[src] = 0;
+    q.push(0);
+    vis[0] = true;
+    level[0] = 0;
+    
     while(!q.empty()){
         int par = q.front();
         q.pop();
-        
-        // if(par == des) cout<< level[par] << endl;
         
         for(int child: v[par]){
             if(vis[child] == false){
@@ -24,7 +25,12 @@ void bfs(int src, int des){
             }
         }
     }
-    cout<< level[des] << endl;
+    
+    int cnt = 0;
+    for(int child: v[node]){
+        cnt++;
+    }
+    cout<<cnt<<endl;
 }
 
 int main()
@@ -37,15 +43,10 @@ int main()
         v[a].push_back(b);
         v[b].push_back(a);
     }
-    int tc;
-    cin>>tc;
-    while(tc--){
-        int src,des;
-        cin>>src>>des;
-        memset(vis,false,sizeof(vis));
-        memset(level,-1,sizeof(level));
-        bfs(src,des);
-    }
-    
+    int node;
+    cin>>node;
+    memset(vis,false,sizeof(vis));
+    memset(level,-1,sizeof(level));
+    bfs(node);
     return 0;
 }
