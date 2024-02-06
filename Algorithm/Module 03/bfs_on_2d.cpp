@@ -48,6 +48,7 @@ int main()
     int si,sj;
     cin>>si>>sj;
     memset(vis,false,sizeof(vis));
+    
     memset(dis,-1,sizeof(dis));
     bfs(si,sj);
     return 0;
