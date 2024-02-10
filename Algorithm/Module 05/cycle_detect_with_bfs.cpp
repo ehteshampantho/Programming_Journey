@@ -7,6 +7,7 @@ const int N = 1e5+5;
 bool vis[N];
 vector<int> adj[N];
 int parentArray[N];
+
 bool ans;
 
 void bfs(int s){

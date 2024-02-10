@@ -1,1 +1,1 @@
-Cycle Found
+Cycle Detected
