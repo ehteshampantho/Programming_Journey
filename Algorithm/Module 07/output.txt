@@ -1,1 +1,9 @@
-Cycle found. No answer.
+Before
+0 -5 INF 
+INF 0 3 
+-1 INF 0 
+After
+-3 -8 -5 
+2 -3 0 
+-4 -9 -6 
+Cycle deteted
