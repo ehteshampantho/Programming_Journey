@@ -3,7 +3,12 @@ using namespace std;
 
 void convert_adjlist_to_matrix(int n, vector<int> adj[]){
     int mat[n][n];
-    memset(mat,0,sizeof(mat));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            mat[i][j] = 0;
+            if(i==j) mat[i][j] = 1;
+        }
+    }
     for(int i=0;i<n;i++){
         for(int child: adj[i]){
             mat[i][child] = 1;
