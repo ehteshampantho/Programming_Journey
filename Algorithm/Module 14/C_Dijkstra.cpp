@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-#define ll long long int
-#define pi pair<int,int>
+#define ll long long
+#define pi pair<ll,ll>
 
 using namespace std;
 
@@ -16,7 +16,7 @@ class cmp{
         }
 };
 
-void dijkstra(int s){
+void dijkstra(ll s){
     priority_queue<pi, vector<pi>, cmp> pq;
     pq.push({s,0});
     dis[s] = 0;
@@ -40,15 +40,15 @@ void dijkstra(int s){
 }
 
 int main(){
-    int n,e;
+    ll n,e;
     cin>>n>>e;
     while(e--){
-        int a,b,c;
+        ll a,b,c;
         cin>>a>>b>>c;
         v[a].push_back({b,c});
         v[b].push_back({a,c});
     }
-    for(int i=1;i<=n;i++){
+    for(ll i=1;i<=n;i++){
         dis[i] = 1e18;
         par[i] = -1;
     }
@@ -65,6 +65,7 @@ int main(){
         for(ll val: path){
             cout<< val << " ";
         }
+        cout<<endl;
     }
     return 0;
 }
