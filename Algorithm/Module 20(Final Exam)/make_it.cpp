@@ -1,15 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool knapsack(int n, int s){
+int dp[1005];
 
-    if(s==n || s>=n) return true;
+int knapsack(int n, int s){
 
-    while(s <= n){
-        int op1 = knapsack(n,s+1) + 3;
-        int op2 = knapsack(n,s+1) * 2;
-        return 
-    }
+    if(s==n){
+        return 1;
+    }    
+    else if(s>n){
+        return 0;
+    }    
+
+    if(dp[s] != -1) return dp[s];
+
+    int op1 = knapsack(n,s+3);
+    int op2 = knapsack(n,s*2);
+    return dp[s] = op1 || op2;
 }
 
 int main(){
@@ -18,6 +25,10 @@ int main(){
     while(t--){
         int n;
         cin>>n;
+
+        for(int i=0;i<=n;i++){
+            dp[i] = -1;
+        }
 
         if(knapsack(n,1)) cout<<"YES"<<endl;
         else cout<<"NO"<<endl;
