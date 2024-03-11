@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int dp[1005];
+int dp[100005];
 
 int knapsack(int n, int s){
 
