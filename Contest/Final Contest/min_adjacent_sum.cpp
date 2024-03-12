@@ -1,22 +1,24 @@
-#include<bits/stdc++.h>
-#define ll long long 
+#include <bits/stdc++.h>
+
 using namespace std;
-int main(){
-    ll n;
+
+int main()
+{
+    int n;
     cin>>n;
-    ll a[n];
-
-    for(ll i=0;i<n;i++){
-        cin>>a[i];
+    vector<int> a;
+    
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        a.push_back(x);
     }
-    ll ans = 1e9+5;
-    ll i,j;
-    for(i=0,j=n;i < n/2;i++,j--){
-        swap(a[i],a[j]);
-        ll sum = a[i]+a[j];
-        ans = min(ans,sum);
-    }
-
+    
+    sort(a.begin(),a.end());
+    
+    int ans = a[0] + a[1];
+    
     cout << ans << "\n";
+
     return 0;
 }

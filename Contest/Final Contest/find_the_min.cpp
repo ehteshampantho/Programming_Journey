@@ -1,38 +1,33 @@
-#include<bits/stdc++.h>
-#define ll long long
+#include <bits/stdc++.h>
+
 using namespace std;
 
-int main(){
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-
-    ll t;
+    
+    int t;
     cin>>t;
-    priority_queue<ll, vector<ll>, greater<ll>> pq;
-    vector<ll> occur(1e8+5,0);
-
+    set<int> s;
+    
     while(t--){
-        ll x,val;
+        int x;
         cin>>x;
         if(x==1){
+            int val;
             cin>>val;
-            pq.push(val);
-            occur[val]++;
+            s.insert(val);
         }
-        else if(x==2){
-            // while(!pq.empty() && occur[pq.top()] == 0){
-            //     pq.pop();
-            // }
-            if(pq.empty()) cout<<"empty"<<"\n";
+        else{
+            if(s.empty()) cout<<"empty"<<"\n";
             else{
-                ll minVal = pq.top();
-                cout<< minVal << "\n";
-                while(occur[minVal] != 0){
-                    pq.pop();
-                    occur[minVal]--;
-                }
+                auto ans = s.begin();
+                cout<< *ans << "\n";
+                s.erase(ans);
             }
         }
     }
+
     return 0;
 }
