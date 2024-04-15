@@ -31,4 +31,4 @@ print(type(age))
 
 print("Kodom Ali" + " " +"kacha badam")
 text = f"Kodom Ali {age} living in {district}.interesting with rate {interest_rate}%"
-print(text)
+print(text) 
