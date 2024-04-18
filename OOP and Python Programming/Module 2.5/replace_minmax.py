@@ -6,10 +6,19 @@ final = list(map(int,input().strip().split()))[:n]
 mx = max(final)
 mn = min(final)
 
-# final[final.index(mx)], final[final.index(mn)] = final[final.index(mn)] , final[final.index(mx)]
-temp = final[final.index(mx)]
-final[final.index(mx)] = final[final.index(mn)]
-final[final.index(mn)] = temp
+for i in final: #4,10,1,3,2,10
+    if i == mx:
+        print(mn,end=" ")
+    elif i == mn:
+        print(mx,end=" ")
+    else:
+        print(i,end=" ")
 
-print(*final)
+# final[final.index(mx)], final[final.index(mn)] = final[final.index(mn)] , final[final.index(mx)]
+
+# temp = final[final.index(mx)]
+# final[final.index(mx)] = final[final.index(mn)]
+# final[final.index(mn)] = temp
+
+# print(*final)
 
